@@ -23,6 +23,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
+import com.example.chessopener.R
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,22 +39,46 @@ class MainActivity : ComponentActivity() {
 @Preview
 @Composable
 fun ChessOpenerApp() {
-    DiceWithButtonAndImage(modifier = Modifier
+    ChessBoardWithButtonAndImage(modifier = Modifier
         .fillMaxSize()
         .wrapContentSize(Alignment.Center)
     )
 }
 
 @Composable
-fun DiceWithButtonAndImage(modifier: Modifier = Modifier) {
+fun ChessBoardWithButtonAndImage(modifier: Modifier = Modifier) {
     var result by remember { mutableStateOf(1) }
     val imageResource = when (result) {
-        1 -> R.drawable.trial2
-//        2 -> R.drawable.dice_2
-//        3 -> R.drawable.dice_3
-//        4 -> R.drawable.dice_4
-//        5 -> R.drawable.dice_5
-        else -> R.drawable.nimzo_indian
+        1 -> R.drawable.chess1
+        2 -> R.drawable.chess2
+        3 -> R.drawable.chess3
+        4 -> R.drawable.chess4
+        5 -> R.drawable.chess5
+        6 -> R.drawable.chess6
+        7 -> R.drawable.chess7
+        8 -> R.drawable.chess8
+        9 -> R.drawable.chess9
+        10 -> R.drawable.chess10
+        11 -> R.drawable.chess11
+        12 -> R.drawable.chess12
+        13 -> R.drawable.chess13
+        14 -> R.drawable.chess14
+        15 -> R.drawable.chess15
+        16 -> R.drawable.chess16
+        17 -> R.drawable.chess17
+        18 -> R.drawable.chess18
+        19 -> R.drawable.chess19
+        20 -> R.drawable.chess20
+        21 -> R.drawable.chess21
+        22 -> R.drawable.chess22
+        23 -> R.drawable.chess23
+        24 -> R.drawable.chess24
+        25 -> R.drawable.chess25
+        26 -> R.drawable.chess26
+        27 -> R.drawable.chess27
+        28 -> R.drawable.chess28
+        29 -> R.drawable.chess29
+        else -> R.drawable.chess30
     }
     Column(
         modifier = modifier,
@@ -64,7 +89,7 @@ fun DiceWithButtonAndImage(modifier: Modifier = Modifier) {
             contentDescription = result.toString()
         )
         Spacer(modifier = Modifier.height(16.dp))
-        Button(onClick = { result = (1..2).random() }) {
+        Button(onClick = { result = (1..6).random() }) {
             Text(stringResource(R.string.roll))
         }
     }
