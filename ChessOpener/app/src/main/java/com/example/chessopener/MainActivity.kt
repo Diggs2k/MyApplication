@@ -48,7 +48,7 @@ fun ChessOpenerApp() {
 fun DiceWithButtonAndImage(modifier: Modifier = Modifier) {
     var result by remember { mutableStateOf(1) }
     val imageResource = when (result) {
-        1 -> R.drawable.wallpaper
+        1 -> R.drawable.trial2
 //        2 -> R.drawable.dice_2
 //        3 -> R.drawable.dice_3
 //        4 -> R.drawable.dice_4
